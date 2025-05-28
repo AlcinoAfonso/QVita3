@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* scroll suave para os links do menu */
+html {
+  scroll-behavior: smooth;
+}
