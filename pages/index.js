@@ -1,5 +1,3 @@
-import "../styles/globals.css";
-
 export default function Home() {
   const CTA =
     "https://wa.me/5521979658483?text=Gostaria%20de%20saber%20mais%20sobre%20a%20terapia";
