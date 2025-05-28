@@ -113,20 +113,40 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* FAQ */}
-      <Section gray title="Perguntas Frequentes (FAQ)">
-        {faqData.map(([q, a]) => (
-          <details
-            key={q}
-            className="mb-3 border border-gray-200 rounded-md bg-white shadow-sm"
+     {/* FAQ – Accordion React */}
+<Section gray title="Perguntas Frequentes (FAQ)">
+  <Accordion items={faqData} />
+</Section>
+
+/* ---------- Accordion Component ---------- */
+function Accordion({ items }) {
+  const [open, setOpen] = React.useState(null);
+  return (
+    <div className="space-y-3">
+      {items.map(([q, a], i) => (
+        <div key={q} className="border border-gray-200 rounded-md bg-white shadow-sm">
+          <button
+            className="w-full flex justify-between items-center px-4 py-3 font-medium"
+            onClick={() => setOpen(open === i ? null : i)}
           >
-            <summary className="cursor-pointer px-4 py-3 font-medium flex justify-between items-center">
-              {q}
-              <span className="text-brand">▸</span>
-            </summary>
-            <p className="px-4 pb-4 text-gray-700">{a}</p>
-          </details>
-        ))}
+            {q}
+            <span
+              className={`transform transition-transform ${
+                open === i ? "rotate-90" : ""
+              }`}
+            >
+              ▸
+            </span>
+          </button>
+          {open === i && (
+            <div className="px-4 pb-4 text-gray-700">{a}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
       </Section>
 
       {/* CTA FINAL */}
