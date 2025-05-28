@@ -1,8 +1,3 @@
-export const metadata = {
-  title: "Quantum Vita – Medicina Quântica",
-  description: "Landing Page MOFU com Tailwind",
-};
-
 const CTA_LINK =
   "https://wa.me/5521979658483?text=Gostaria%20de%20saber%20mais%20sobre%20a%20terapia";
 
