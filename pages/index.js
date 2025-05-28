@@ -115,22 +115,41 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* FAQ */}
-      <Section gray title="Perguntas Frequentes">
-        <Faq q="Precisa de consulta presencial?">
-          Não. Todo o processo é online, via formulário e foto.
-        </Faq>
-        <Faq q="Como o Quantec analisa minha energia?">
-          Escaneia seu campo vibracional e compara com frequências saudáveis.
-        </Faq>
-        <Faq q="É seguro?">
-          Completamente seguro e não invasivo; sem efeitos colaterais.
-        </Faq>
-        <Faq q="O Quantec realmente funciona?">
-          Muitos relatam melhorias nas primeiras semanas; sugerimos 3 meses para
-          resultados mais profundos.
-        </Faq>
-      </Section>
+    {/* FAQ */}
+<Section gray title="Perguntas Frequentes (FAQ)">
+  <Faq q="1. Precisa de consulta para tratamento de medicina quântica?">
+    Não. O processo é iniciado com um formulário digital e envio de foto. Não há necessidade de consulta presencial.
+  </Faq>
+
+  <Faq q="2. Como o Quantec analisa minha energia?">
+    Ele escaneia seu campo vibracional, comparando com um banco de dados de frequências saudáveis para sugerir ajustes necessários.
+  </Faq>
+
+  <Faq q="3. A terapia quântica é segura? Existem efeitos colaterais?">
+    Sim, nossa terapia é completamente segura e não invasiva. Não há efeitos colaterais conhecidos, pois trabalhamos apenas com frequências naturais para harmonizar seu corpo.
+  </Faq>
+
+  <Faq q="4. O Quantec realmente funciona?">
+    Muitos clientes relatam melhorias já nas primeiras semanas. Recomendamos um tratamento mínimo de 3 meses para resultados mais profundos e duradouros.
+  </Faq>
+
+  <Faq q="5. Posso fazer a terapia quântica junto com outros tratamentos?">
+    Absolutamente! Nossa terapia é complementar e pode potencializar os efeitos de outros tratamentos. Sempre informe seu médico sobre todas as terapias que está realizando.
+  </Faq>
+
+  <Faq q="6. Como é realizado o tratamento à distância?">
+    Utilizamos tecnologia avançada que permite enviar frequências vibracionais específicas para você, independentemente de sua localização. Não é necessário estar fisicamente presente.
+  </Faq>
+
+  <Faq q="7. Qual a diferença entre Quantum Vita e outras terapias alternativas?">
+    Utilizamos tecnologia Quantec de ponta, oferecendo tratamentos personalizados e baseados em princípios da física quântica, com resultados mensuráveis.
+  </Faq>
+
+  <Faq q="8. A terapia quântica pode tratar problemas emocionais?">
+    Sim, nossa abordagem holística trabalha com o equilíbrio energético, que impacta diretamente nas emoções. Muitos clientes relatam melhora significativa em questões emocionais.
+  </Faq>
+</Section>
+
 
       {/* CTA FINAL */}
       <section className="bg-brand text-white text-center px-6 py-16">
