@@ -1,4 +1,4 @@
-/* pages/index.js – versão completa, Tailwind ativo */
+/* pages/index.js – versão única e válida */
 export default function Home() {
   const CTA =
     "https://wa.me/5521979658483?text=Gostaria%20de%20saber%20mais%20sobre%20a%20terapia";
@@ -28,8 +28,8 @@ export default function Home() {
           Medicina Quântica Segura com Tecnologia de Ponta
         </h1>
         <h2 className="text-lg md:text-xl max-w-2xl mx-auto">
-          Terapia Quântica não invasiva, reconhecida na Europa e aplicada com
-          precisão por profissional experiente.
+          Terapia Quântica não invasiva, reconhecida na Europa e aplicada por
+          profissional experiente.
         </h2>
 
         <a
@@ -52,9 +52,7 @@ export default function Home() {
           🧠 Identifica padrões sutis — emocionais, mentais, físicos ou
           energéticos — que influenciam a vida da pessoa.
         </Bullet>
-        <Bullet>
-          ⚖️ Atua nos bloqueios que geram desconfortos e conflitos.
-        </Bullet>
+        <Bullet>⚖️ Atua nos bloqueios que geram desconfortos e conflitos.</Bullet>
         <Bullet>🔄 Resultados variam conforme cada pessoa.</Bullet>
         <Bullet>
           🌱 Funciona melhor quando há abertura para mudanças conscientes.
@@ -115,7 +113,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* FAQ COMPLETO */}
+      {/* FAQ */}
       <Section gray title="Perguntas Frequentes (FAQ)">
         {faqData.map(([q, a]) => (
           <details
@@ -133,11 +131,12 @@ export default function Home() {
 
       {/* CTA FINAL */}
       <section className="bg-brand text-white text-center px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">
+        <h2 className="text-3xl font-bold mb-4">
           Veja como funciona antes de decidir
         </h2>
-        <p className="mb-6">
-          Etapas claras, dados objetivos e respeito ao seu ritmo pessoal.
+        <p className="max-w-xl mx-auto mb-8">
+          O processo é claro: dados objetivos, etapas bem definidas e respeito
+          ao seu ritmo pessoal.
         </p>
         <WaButton href={CTA} />
       </section>
@@ -150,19 +149,25 @@ export default function Home() {
   );
 }
 
-/* ---------- PEQUENOS COMPONENTES ---------- */
-const Section = ({ id, title, gray, children }) => (
-  <section
-    id={id}
-    className={`px-6 py-16 ${gray ? "bg-gray-100" : ""} max-w-5xl mx-auto`}
-  >
-    <h2 className="text-3xl font-bold text-center text-brand mb-10">{title}</h2>
-    {children}
-  </section>
-);
+/* ---------- COMPONENTES AUX ---------- */
+function Section({ id, title, gray, children }) {
+  return (
+    <section
+      id={id}
+      className={`px-6 py-16 ${gray ? "bg-gray-100" : ""} max-w-5xl mx-auto`}
+    >
+      <h2 className="text-center text-3xl font-bold mb-10 text-brand">
+        {title}
+      </h2>
+      {children}
+    </section>
+  );
+}
+
 const Bullet = ({ children }) => (
   <p className="mb-3 flex items-start gap-2">{children}</p>
 );
+
 const Grid = ({ items }) => (
   <div className="grid md:grid-cols-2 gap-4">
     {items.map((t) => (
@@ -170,6 +175,7 @@ const Grid = ({ items }) => (
     ))}
   </div>
 );
+
 const Ordered = ({ items }) => (
   <ol className="list-decimal pl-5 space-y-2">
     {items.map((t) => (
@@ -177,6 +183,7 @@ const Ordered = ({ items }) => (
     ))}
   </ol>
 );
+
 const WaButton = ({ href }) => (
   <a
     href={href}
@@ -186,7 +193,7 @@ const WaButton = ({ href }) => (
   </a>
 );
 
-/* FAQ data (perfeito ao template) */
+/* ---------- FAQ DATA ---------- */
 const faqData = [
   [
     "1. Precisa de consulta para tratamento de medicina quântica?",
@@ -221,79 +228,3 @@ const faqData = [
     "Sim. O equilíbrio energético impacta diretamente nas emoções; muitos clientes relatam melhora significativa.",
   ],
 ];
-
-
-
-      {/* CTA FINAL */}
-      <section className="bg-brand text-white text-center px-6 py-16">
-        <h2 className="text-3xl font-bold mb-4">
-          Veja como funciona antes de decidir
-        </h2>
-        <p className="max-w-xl mx-auto mb-8">
-          O processo é claro: dados objetivos, etapas bem definidas e respeito
-          ao seu ritmo pessoal.
-        </p>
-        <a
-          href={CTA_LINK}
-          className="inline-block bg-white text-brand font-semibold px-8 py-3 rounded-full shadow hover:opacity-90 transition"
-        >
-          Saiba como é feito na prática
-        </a>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-400 text-center py-6">
-        © {new Date().getFullYear()} Quantum Vita
-      </footer>
-    </>
-  );
-}
-
-/* ---------- COMPONENTES AUX ---------- */
-function Section({ id, title, gray, children }) {
-  return (
-    <section
-      id={id}
-      className={`px-6 py-16 ${gray ? "bg-gray-100" : ""} max-w-5xl mx-auto`}
-    >
-      <h2 className="text-center text-3xl font-bold mb-10 text-brand">
-        {title}
-      </h2>
-      {children}
-    </section>
-  );
-}
-
-const Bullet = ({ children }) => (
-  <p className="mb-4 flex items-start gap-2">
-    <span>{children}</span>
-  </p>
-);
-
-const Benefit = ({ emoji, title }) => (
-  <div className="mb-6">
-    <h3 className="font-semibold mb-1">
-      {emoji} {title}
-    </h3>
-    <p className="text-sm text-gray-700">
-      Descrição resumida conforme o template.
-    </p>
-  </div>
-);
-
-const Step = ({ num, text }) => (
-  <div className="mb-4 font-medium">
-    <span className="mr-2 text-brand">{num}.</span>
-    {text}
-  </div>
-);
-
-function Faq({ q, children }) {
-  return (
-    <details className="mb-3 cursor-pointer">
-      <summary className="font-medium">{q}</summary>
-      <p className="ml-4 mt-1 text-sm text-gray-700">{children}</p>
-    </details>
-  );
-}
-
