@@ -4,4 +4,4 @@
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
-body { @apply font-body text-text-dark; }
+body { @apply font-body text-gray-900; }
