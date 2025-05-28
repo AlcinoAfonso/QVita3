@@ -34,3 +34,7 @@
     --fs-h2: var(--fs-h2-md);
   }
 }
+@layer utilities {
+  .text-text-dark { color: var(--text-dark); }
+}
+
