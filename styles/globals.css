@@ -1,8 +1,7 @@
+@import "./design-tokens.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* scroll suave para os links do menu */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
+body { @apply font-body text-text-dark; }
