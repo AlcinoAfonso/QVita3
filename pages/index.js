@@ -1,4 +1,6 @@
-/* pages/index.js – versão única e válida */
+/* pages/index.js – versão corrigida com Accordion */
+import React from "react";
+
 export default function Home() {
   const CTA =
     "https://wa.me/5521979658483?text=Gostaria%20de%20saber%20mais%20sobre%20a%20terapia";
@@ -113,40 +115,9 @@ export default function Home() {
         </div>
       </Section>
 
-     {/* FAQ – Accordion React */}
-<Section gray title="Perguntas Frequentes (FAQ)">
-  <Accordion items={faqData} />
-</Section>
-
-/* ---------- Accordion Component ---------- */
-function Accordion({ items }) {
-  const [open, setOpen] = React.useState(null);
-  return (
-    <div className="space-y-3">
-      {items.map(([q, a], i) => (
-        <div key={q} className="border border-gray-200 rounded-md bg-white shadow-sm">
-          <button
-            className="w-full flex justify-between items-center px-4 py-3 font-medium"
-            onClick={() => setOpen(open === i ? null : i)}
-          >
-            {q}
-            <span
-              className={`transform transition-transform ${
-                open === i ? "rotate-90" : ""
-              }`}
-            >
-              ▸
-            </span>
-          </button>
-          {open === i && (
-            <div className="px-4 pb-4 text-gray-700">{a}</div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
+      {/* FAQ – Accordion */}
+      <Section gray title="Perguntas Frequentes (FAQ)">
+        <Accordion items={faqData} />
       </Section>
 
       {/* CTA FINAL */}
@@ -212,6 +183,36 @@ const WaButton = ({ href }) => (
     WhatsApp: Gostaria de saber mais
   </a>
 );
+
+/* ---------- Accordion ---------- */
+function Accordion({ items }) {
+  const [open, setOpen] = React.useState(null);
+  return (
+    <div className="space-y-3">
+      {items.map(([q, a], i) => (
+        <div
+          key={q}
+          className="border border-gray-200 rounded-md bg-white shadow-sm"
+        >
+          <button
+            className="w-full flex justify-between items-center px-4 py-3 font-medium"
+            onClick={() => setOpen(open === i ? null : i)}
+          >
+            {q}
+            <span
+              className={`transform transition-transform ${
+                open === i ? "rotate-90" : ""
+              }`}
+            >
+              ▸
+            </span>
+          </button>
+          {open === i && <div className="px-4 pb-4 text-gray-700">{a}</div>}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 /* ---------- FAQ DATA ---------- */
 const faqData = [
